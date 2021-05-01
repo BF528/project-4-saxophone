@@ -23,7 +23,7 @@ Data Analyst - Sooyoun Lee leesu@bu.edu
 Biologist - Daniel Goldstein djgoldst@bu.edu
 # Repository Contents
 Data Curator:
-1. bcount
+1. bcount.qsub
 This qsub file uses awk to read the fastq barcodes from the sammple files for SRR3879604, SRR3879605, and SRR3879606 to count and order them.
 
 2. whitelist.R
