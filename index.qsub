@@ -1,0 +1,10 @@
+#!/bin/bash -l
+
+#$ -P bf528
+#$ -cwd
+#$ -j y
+#$ -pe mpi_16_tasks_per_node 16
+
+module load salmon/1.1.0
+
+salmon index -i gencode.v37.index -k 31 --gencode -p 16 -t /projectnb2/bf528/users/saxophone/project4/curator/gencode.v37.transcripts.fa

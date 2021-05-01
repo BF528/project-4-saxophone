@@ -1,0 +1,22 @@
+#!/bin/bash -l
+
+#$ -P bf528
+#$ -cwd
+#$ -j y
+#$ -pe mpi_16_tasks_per_node 16
+
+module load salmon/1.1.0
+
+samples=/projectnb/bf528/project_4_scrnaseq/fastq
+
+salmon alevin index -l ISR -p 10 \
+-1 $samples/SRR3879604/SRR3879604_1_bc.fastq.gz \
+$samples/SRR3879605/SRR3879605_1_bc.fastq.gz \
+$samples/SRR3879606/SRR3879606_1_bc.fastq.gz \
+-2 $samples/SRR3879604/SRR3879604_2.fastq.gz \
+$samples/SRR3879605/SRR3879605_2.fastq.gz \
+$samples/SRR3879606/SRR3879606_2.fastq.gz \
+-i sal_index -o salmon_output3 \
+--tgMap /projectnb/bf528/users/saxophone/project4/curator/txp2gene.tsv \
+--whitelist /projectnb/bf528/users/saxophone/project4/curator/combined_wl.txt \
+--end 5 --barcodeLength 19 --umiLength 6
