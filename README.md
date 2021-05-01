@@ -10,7 +10,7 @@ In this project our goal is the following:
 3. Perform quality control on a UMI count matrix
 4. Analyse the UMI counts to identify clusters and marker genes for distinct cell type populations
 5. Ascribe biological meaning to the clustered cell types and idnetify novel marker genes associated with them 
-6. 
+
 
 # Contributors
 
