@@ -1,13 +1,12 @@
-#!/bin/bash -l
+#!/bin/bash
 
 #$ -P bf528
 #$ -cwd
-#$ -j y
-#$ -pe mpi_16_tasks_per_node 16
 
+source /etc/bashrc
 
-zcat /projectnb/bf528/project_4_scrnaseq/fastq/SRR3879604/SRR3879604_1_bc.fastq.gz | awk 'NR%4==1{$2 = substr($2,5)}{$3 = substr($3,5)}{print $2$3}' | sort | uniq -c > SRR3879604_wl_2
+zcat /projectnb2/bf528/project_4_scrnaseq/fastq/SRR3879604/SRR3879604_1_bc.fastq.gz | awk 'NR%4==2' | cut -c -19 | sort | uniq -c | sort > SRR3879604_bc1.txt
 
-zcat /projectnb/bf528/project_4_scrnaseq/fastq/SRR3879605/SRR3879605_1_bc.fastq.gz | awk 'NR%4==1{$2 = substr($2,5)}{$3 = substr($3,5)}{print $2$3}' | sort | uniq -c > SRR3879605_wl_2
+zcat /projectnb2/bf528/project_4_scrnaseq/fastq/SRR3879605/SRR3879605_1_bc.fastq.gz | awk 'NR%4==2' | cut -c -19 | sort | uniq -c | sort > SRR3879605_bc1.txt
 
-zcat /projectnb/bf528/project_4_scrnaseq/fastq/SRR3879606/SRR3879606_1_bc.fastq.gz | awk 'NR%4==1{$2 = substr($2,5)}{$3 = substr($3,5)}{print $2$3}' | sort | uniq -c > SRR3879606_wl_2
+zcat /projectnb2/bf528/project_4_scrnaseq/fastq/SRR3879606/SRR3879606_1_bc.fastq.gz | awk 'NR%4==2' | cut -c -19 | sort | uniq -c | sort > SRR3879606_bc1.txt
