@@ -22,6 +22,19 @@ Data Analyst - Sooyoun Lee leesu@bu.edu
 
 Biologist - Daniel Goldstein djgoldst@bu.edu
 # Repository Contents
+Data Curator:
+1. bcount
+This qsub file uses awk to read the fastq barcodes from the sammple files for SRR3879604, SRR3879605, and SRR3879606 to count and order them.
+
+2. whitelist.R
+R code to receive the input from bcount.qsub and create a basic ecdf plot for each sample. As there is a low amount of high reads, this code takes the top 1000 from each SRR sample, merges them, then outputs the file in a format to be used in Alevin.
+
+3. index.qsub
+A batch job requesting 16 nodes to create an index using Salmon, to be used in Alevin. Using human v.37 data from the Gencode website.
+
+4. alevin.qsub
+Input to run Salmon Alevin using the barcode white list created from whitelist.R and using the Gencode v.37 human index built with index.qsub
+
 
 Analyst: 
 1. Seurat
