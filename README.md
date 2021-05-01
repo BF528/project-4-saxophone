@@ -27,12 +27,15 @@ Data Curator:
 This qsub file uses awk to read the fastq barcodes from the sammple files for SRR3879604, SRR3879605, and SRR3879606 to count and order them.
 
 2. whitelist.R
-R code to receive the input from bcount.qsub and create a basic ecdf plot for each sample. As there is a low amount of high reads, this code takes the top 1000 from each SRR sample, merges them, then outputs the file in a format to be used in Alevin.
+R code to receive the input from bcount.qsub and create a basic ecdf plot for each sample. As there is a low amount of high reads, this code takes the top 1000 from each SRR sample, merges them, then outputs the file in a format to be used in Salmon Alevin.
 
 3. index.qsub
 A batch job requesting 16 nodes to create an index using Salmon, to be used in Alevin. Using human v.37 data from the Gencode website.
 
-4. alevin.qsub
+4. mapping.qsub
+A qsub creating a mapping file from Gencode human v.37, required to run Salmon Alevin
+
+5. alevin.qsub
 Input to run Salmon Alevin using the barcode white list created from whitelist.R and using the Gencode v.37 human index built with index.qsub
 
 
