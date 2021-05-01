@@ -1,0 +1,6 @@
+#!/bin/bash -l
+
+#$ -P bf528
+#$ -cwd
+
+awk '{if ($1!="e_type") {print $12,$10}}' gencode.v37.annotation.gtf | tr -d  \" | sed 's/;//g' > txp2gene.tsv
