@@ -16,7 +16,7 @@ In this project our goal is the following:
 
 Data Curator - Jason Rose jjrose@bu.edu
 
-Programmer - Sunny Yang yang98@bu.edu
+Programmer - Yilin(Sunny) Yang yang98@bu.edu
 
 Data Analyst - Sooyoun Lee leesu@bu.edu
 
