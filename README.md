@@ -38,6 +38,9 @@ A qsub creating a mapping file from Gencode human v.37, required to run Salmon A
 5. alevin.qsub
 Input to run Salmon Alevin using the barcode white list created from whitelist.R and using the Gencode v.37 human index built with index.qsub
 
+Programmer: 
+1. programmer_script.R
+R script that reads UMI counts matrix, filters low-quality cells, clusters cells and identifies subtype using Seurat packages 
 
 Analyst: 
 1. Seurat
