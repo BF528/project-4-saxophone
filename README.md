@@ -48,3 +48,7 @@ The Seurat was used to analyze, and exploraiton of single-cell RNA-seq data. By 
 
 2. ggplot2
 The ggplot2 function was used for the data visualization. By using the ggplot2, it can improve the quality and aesthetics of the graphics.  
+
+Biologist:
+1. genelist.R
+R script that subsets the marker gene clusters from marker_genes.csv and writes the gene ids to a text file.
